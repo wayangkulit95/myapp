@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+    <h2>Add New User</h2>
+    <form action="/admin/addUser" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="text" name="userCode" placeholder="User Code" required><br>
+        <input type="date" name="expiration" placeholder="Expiration Date" required><br>
+        <input type="text" name="allowedCountries" placeholder="Allowed Countries" required><br>
+        <input type="text" name="userId" placeholder="User ID" required><br>
+        <button type="submit">Add User</button>
+    </form>
+</body>
+</html>

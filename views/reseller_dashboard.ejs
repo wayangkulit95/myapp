@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseller Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= username %></h1>
+    <h2>Your Users</h2>
+
+    <!-- Display the list of users -->
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Code</th>
+                <th>Expiration</th>
+                <th>Allowed Countries</th>
+                <th>Content Access URL</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.code %></td>
+                    <td><%= user.expiration %></td>
+                    <td><%= user.allowedCountries %></td>
+                    <td>
+                        <a href="http://your-vps-ip:3000<%= contentUrl.replace(':username', user.username).replace(':code', user.code) %>">Access Content</a>
+                    </td>
+                    <td><a href="/user/<%= user.id %>">View</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <a href="/reseller/addUser">Add New User</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
