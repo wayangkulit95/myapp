@@ -3,3 +3,7 @@ install di os ubuntu
 langkah pertama
 
 '''' bash <(curl -s https://raw.githubusercontent.com/wayangkulit95/myapp/refs/heads/main/install.sh) ''''
+
+
+npm install node-fetch@2
+
